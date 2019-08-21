@@ -49,7 +49,7 @@ class Ldap
         return $this->getMessenger()->ldapCheck($username,$password,$this->formatGateways($gateways));
     }
 
-    public function userSearch($username)
+    public function userSearch($username,array $gateways = [])
     {
         $message = $this->formatMessage();
         $gateways = empty($gateways)?$message->getGateways():$gateways;
@@ -60,7 +60,7 @@ class Ldap
         return $this->getMessenger()->userSearch($username,$this->formatGateways($gateways));
     }
 
-    public function emailSearch($email)
+    public function emailSearch($email,array $gateways = [])
     {
         $message = $this->formatMessage();
         $gateways = empty($gateways)?$message->getGateways():$gateways;

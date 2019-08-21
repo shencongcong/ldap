@@ -11,6 +11,49 @@ $ composer require shencongcong/ldap -vvv
 
 ## Usage
 
+```php
+use Shencongcong\Ldap\Ldap;
+
+$config = [
+    'default' => [
+        // 网关调用策略，默认：顺序调用
+        'strategy' => \Shencongcong\Ldap\Strategies\OrderStrategy::class,
+        // 默认可用的发送网关
+        'gateways' => [
+            'home','idc'
+        ],
+    ],
+    'gateways' => [
+        'home' => [
+            'url' => 'LDAP://10.0.0.110/',
+        ],
+        'idc' => [
+            'url' => 'LDAP://10.0.0.150/',
+        ],
+    ],
+];
+
+$ldap = new Ldap($config);
+
+1. 验证账号密码
+$username = 'xxxx';
+$password = 'xxxx';
+$gateways = ['home',idc];
+$res = $ldap->ldapCheck($username,$password,$gateways);
+
+2. 根据用户名模糊查找用户
+$username = 'xxxx';
+$gateways = ['home',idc];
+$res = $ldap->userSearch($username,$gateways);
+
+3. 根据邮箱模糊查找用户
+$email = 'xxxx';
+$gateways = ['home',idc];
+$res = $ldap->emailSearch($email,$gateways);
+
+
+```
+
 TODO
 
 ## Contributing
