@@ -6,7 +6,7 @@
 ## Installing
 
 ```shell
-$ composer require shencongcong/ldap 1.0.0
+$ composer require shencongcong/ldap -vvv
 ```
 
 ## Usage
