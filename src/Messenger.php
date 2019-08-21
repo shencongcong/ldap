@@ -31,7 +31,7 @@ class Messenger
 
         foreach ($gateways as $gateway => $config) {
             try {
-                $results[$gateway] = [
+                $results = [
                     'gateway' => $gateway,
                     'status' => self::STATUS_SUCCESS,
                     'result' => $this->ldap->gateway($gateway)
@@ -69,7 +69,7 @@ class Messenger
 
         foreach ($gateways as $gateway => $config) {
             try {
-                $results[$gateway] = [
+                $results = [
                     'gateway' => $gateway,
                     'status' => self::STATUS_SUCCESS,
                     'result' => $this->ldap->gateway($gateway)
@@ -107,7 +107,7 @@ class Messenger
 
         foreach ($gateways as $gateway => $config) {
             try {
-                $results[$gateway] = [
+                $results = [
                     'gateway' => $gateway,
                     'status' => self::STATUS_SUCCESS,
                     'result' => $this->ldap->gateway($gateway)
