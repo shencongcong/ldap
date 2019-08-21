@@ -34,7 +34,7 @@ class HomeGateWay extends Gateway
             $ret = $this->ldap_user_search($username);
         }
         else {
-            $ret = ['input invalid.'];
+            $ret = [];
         }
 
         return $ret;
@@ -100,7 +100,7 @@ class HomeGateWay extends Gateway
             $ret = ['status' => 0, 'users' => $users];
         }
         else {
-            $ret = ['status' => 1, 'msg' => 'input invalid.'];
+            $ret = ['status' => 1, 'msg' => []];
         }
         return $ret;
     }
@@ -111,7 +111,6 @@ class HomeGateWay extends Gateway
         ldap_set_option($server, LDAP_OPT_NETWORK_TIMEOUT, self::DEFAULT_TIMEOUT);
         ldap_set_option($server, LDAP_OPT_PROTOCOL_VERSION, 3);
         ldap_bind($server, 'cn='.config('ldap.ldap_admin_account').',cn=Users,dc=intranet,dc=123u,dc=com', config('ldap.ldap_admin_password'));
-
         $filter = "(mail=*$mail*)";
         $base = 'OU=users,OU=123u,DC=intranet,DC=123u,DC=com';
         $base_array = explode(',', $base);

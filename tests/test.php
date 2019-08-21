@@ -27,7 +27,7 @@ $config = [
     ],
 ];
 $ldap = new Shencongcong\Ldap\Ldap($config);
-$password = '$Aa431275';
-$gateways = ['home1','idc1'];
+/*$password = '$Aa431275';
+$gateways = ['home1','idc1'];*/
 $email = 'dan';
 $res = $ldap->emailSearch($email);

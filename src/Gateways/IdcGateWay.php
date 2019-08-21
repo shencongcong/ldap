@@ -38,7 +38,7 @@ class IdcGateWay extends Gateway
             $ret = $this->ldap_user_search($username);
         }
         else {
-            $ret = ['input invalid.'];
+            $ret = [];
         }
 
         return $ret;
@@ -104,7 +104,7 @@ class IdcGateWay extends Gateway
             $ret = ['status' => 0, 'users' => $users];
         }
         else {
-            $ret = ['status' => 1, 'msg' => 'input invalid.'];
+            $ret = ['status' => 1, 'msg' => []];
         }
         return $ret;
     }
