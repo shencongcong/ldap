@@ -10,7 +10,7 @@ namespace Shencongcong\Ldap\Gateways;
 
 use Shencongcong\Ldap\Support\Config;
 
-class IdcGateWay extends Gateway
+class IdcGateway extends Gateway
 {
 
     const DEFAULT_TIMEOUT = 5.0;

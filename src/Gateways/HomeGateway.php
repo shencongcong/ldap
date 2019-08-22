@@ -10,7 +10,7 @@ namespace Shencongcong\Ldap\Gateways;
 
 use Shencongcong\Ldap\Support\Config;
 
-class HomeGateWay extends Gateway
+class HomeGateway extends Gateway
 {
 
     public function ldapCheck($username, $passport, Config $config)
