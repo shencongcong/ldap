@@ -18,7 +18,7 @@ $ composer require shencongcong/ldap ~1.0
 ```php
 'providers' => [
     // ...
-    Overtrue\LaravelWeChat\ServiceProvider::class,
+    Shencongcong\Ldap\ServiceProvider::class,
 ],
 ```
 
