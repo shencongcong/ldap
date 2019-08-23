@@ -20,7 +20,7 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
     public function register()
     {
         // 发布配置文件
-        $this->publishes([__DIR__ . '/config/' => config_path('ldap.php'),'config']);
+        $this->publishes([__DIR__ . '/config/ldap.php' => config_path('ldap.php'),'config']);
 
         $this->app->singleton(Ldap::class,function (){
             return Ldap::getInstance();
