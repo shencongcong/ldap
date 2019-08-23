@@ -66,17 +66,17 @@ $ldap = new Ldap($config);
 1. 验证账号密码
 $username = 'xxxx';
 $password = 'xxxx';
-$gateways = ['home',idc];
+$gateways = ['home','idc'];
 $res = $ldap->ldapCheck($username,$password,$gateways);
 
 2. 根据用户名模糊查找用户
 $username = 'xxxx';
-$gateways = ['home',idc];
+$gateways = ['home','idc'];
 $res = $ldap->userSearch($username,$gateways);
 
 3. 根据邮箱模糊查找用户
 $email = 'xxxx';
-$gateways = ['home',idc];
+$gateways = ['home','idc'];
 $res = $ldap->emailSearch($email,$gateways);
 
 ```
